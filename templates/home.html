@@ -1,0 +1,41 @@
+{% load static %}
+<html>
+<head>
+    <title>HOME</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+
+    <div class="container">
+        <form id="wiki" method="POST">
+            {% csrf_token %}
+            <label for="name1"><h4>Enter name of the topic from wikipedia:- </h4></label>
+            <input id="name1" type="text" name="name1">
+            <input type="submit">
+            <br>
+        </form>
+
+    </div>
+    <div class="container">
+        <form id="url" method="POST">
+            {% csrf_token %}
+            <label for="name2"><h4>Enter url of the website from where you want to use words:- </h4></label>
+            <input id="name2" type="text" name="name2">
+            <input type="submit">
+            <br>
+        </form>
+    </div>
+    <div class="container">
+        <form id="file" method="POST">
+            {% csrf_token %}
+            <label for="name3"><h4>Submit the file from where you want to use words:- </h4></label>
+            <input id="name3" type="file" id="docpicker" accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="name3">
+            <input type="submit">
+            <br>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% load static %}
+<html>
+<head>
+	<title>TYPO</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+
+	<!-- <div>
+	  <img src="data:image/png;base64,{{wordcloud}}">
+	</div> -->
+	
+
+	<p><input type="file" accept="image/*" name="image" id="file1" onchange="loadFile1(event)" style="display: none;"></p>
+
+	<p><label for="file1" style="cursor: pointer;" onclick="myFunction(this, 'grey')">Upload Image1</label></p>
+
+	<div class="typo">
+		<img id="output1">
+		<img id="output2" src="data:image/png;base64,{{wordcloud}}">
+	</div>
+
+
+
+	<script>
+		var loadFile1 = function (event) {
+			var image1 = document.getElementById('output1');
+			image1.src = URL.createObjectURL(event.target.files[0]);
+		};
+		var loadFile2 = function (event) {
+			var image2 = document.getElementById('output2');
+			image2.src = URL.createObjectURL(event.target.files[0]);
+		};
+
+		function myFunction(element, clr) {
+			element.style.color = clr;
+		}
+	</script>
+</body>
+</html>
